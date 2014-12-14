@@ -7,11 +7,10 @@ public class JSCall {
     public static void main(String... args)throws Exception{
         ScriptEngineManager man = new ScriptEngineManager();
         ScriptEngine engine = man.getEngineByName("nashorn");
-        engine.put("jsCall", new JSCall());
-        engine.eval("jsCall.callback('javascript');");
+        engine.eval("Java.type('sample.JSCall').callback('static method');");
     }
 
-    public void callback(String message){
+    public static void callback(String message){
         System.out.println(message);
     }
 }
